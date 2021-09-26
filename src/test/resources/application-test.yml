@@ -1,0 +1,4 @@
+server:
+  port: 8081
+elasticsearch:
+  clusterNodes: localhost:9200
