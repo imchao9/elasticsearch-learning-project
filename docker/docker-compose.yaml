@@ -17,3 +17,17 @@ services:
       - "5601:5601"
 #    volumes:
 #      - "./data/mysql:/var/lib/mysql"
+  mysql:
+    image: mysql:5.6
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+    environment:
+      #MYSQL_ROOT_PASSWORD: mRVHePdfa4Z3X0ewfctefpZuqDrSbtINR4VRslgA2s
+      MYSQL_ROOT_PASSWORD: root
+      # time_zone +8
+      TZ: Asia/Shanghai
+    # For testing from the host:
+    # mysql --host=127.0.0.1 --port=7033 --user root -p
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./data/mysql:/var/lib/mysql"
